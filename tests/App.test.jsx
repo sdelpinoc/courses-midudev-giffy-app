@@ -39,7 +39,8 @@ describe('Testing in <App />', () => {
         const input = await screen.findByRole('textbox');
         fireEvent.change(input, { target: { value: 'Matrix' } });
 
-        const button = await screen.findByRole('button');
+        // const button = await screen.findByRole('button');
+        const button = await screen.findByLabelText('search');
         fireEvent.click(button);
 
         expect(await screen.findByText('Matrix')).toBeVisible();

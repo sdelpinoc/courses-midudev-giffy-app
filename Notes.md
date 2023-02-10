@@ -15,6 +15,8 @@
 - For the eslint, install:
 - `yarn add --dev eslint-config-react-app eslint`
 
+- useReducer
+
 - And create a file called: .eslintrc.json in the root directory with the following:
 ~~~
 {

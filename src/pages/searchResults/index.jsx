@@ -2,6 +2,8 @@ import { useRef, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
 import ListOfGifs from '../../components/ListOfGifs';
+import SearchForm from '../../components/searchForm/SearchForm';
+
 import { useGifs } from '../../hooks/useGifs';
 import { useNearScreen } from '../../hooks/useNearScreen';
 
@@ -10,9 +12,9 @@ import { Helmet } from 'react-helmet';
 // import useSeo from '../../hooks/useSeo';
 
 const SearchResults = () => {
-    const { keyword } = useParams();
+    const { keyword = 'null', rating = 'g', lang = 'en' } = useParams();
 
-    const { loading, gifs, setPage } = useGifs({ keyword });
+    const { loading, gifs, setPage } = useGifs({ keyword, rating, lang });
 
     const externalRef = useRef();
 
@@ -59,6 +61,7 @@ const SearchResults = () => {
                             <title>{title}</title>
                             <meta name="description" content={title}></meta>
                         </Helmet>
+                        <SearchForm initialKeyword={keyword} initialRating={rating} initialLang={lang} />
                         <ListOfGifs gifs={gifs} keyword={keyword} />
                         <div id="visor" ref={externalRef}></div>
                     </>
