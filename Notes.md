@@ -6,14 +6,24 @@
 - `yarn dev`
 
 ## Installations
-- `yarn add react-router-dom`
-- `yarn add intersection-observer`
+- To handle routes, redirections, etc.
+    - `yarn add react-router-dom`
 
-- Is for only make once request/action
-- `yarn add just-debounce-it`
+- To use a pollify for the IntersectionObserver API:
+    - `yarn add intersection-observer`
+
+- Is for only make once request/action:
+    - `yarn add just-debounce-it`
 
 - For the eslint, install:
-- `yarn add --dev eslint-config-react-app eslint`
+    - `yarn add --dev eslint-config-react-app eslint`
+
+- To handle forms:
+    - `yarn add formik`
+    - `yarn add react-hook-form`
+
+- To handle CSS:
+    - `yarn add @emotion/core`
 
 - useReducer
 
