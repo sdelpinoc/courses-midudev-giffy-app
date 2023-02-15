@@ -10,7 +10,7 @@ export const useNearScreen = ({ distance = '50px', externalRef, once = true }) =
 
         const element = externalRef ? externalRef.current : fromRef.current;
         // console.log({ element });
-        // entries<Array>, all the objects/elements to observe
+        // entries<Array> -> all the objects/elements to observe
         const onChange = (entries, observer) => {
             // console.log({ entries });
             const el = entries[0];

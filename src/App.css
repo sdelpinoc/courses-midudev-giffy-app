@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 #root {
     max-width: 1440px;
     margin: 0 auto;
@@ -9,32 +13,49 @@ h1 {
     text-align: center;
 }
 
-form {
+section h3 {
     text-align: center;
 }
 
-form input,
-form select {
-    font-size: 1.5rem;
-    border: 0;
-    outline: 0;
-    padding: .5em;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+.searchForm>* {
     margin-right: 10px;
 }
 
-form input[type='submit'] {
-    border: 1px solid #000;
-    cursor: pointer;
-    background-color: #646cff;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-
+.searchForm input,
+.searchForm select,
+.searchForm button {
+    font-size: 1.2rem;
+    border: 0;
+    outline: 0;
+    padding: .5em;
+    border-radius: 4px;
 }
 
-form select {
+.searchForm {
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-size: 1.2rem;
+    border: 0;
+    outline: 0;
+    padding: .5em;
     border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgba(100, 108, 255, .8);
+}
+
+.btn:hover {
+    background-color: rgba(100, 108, 255, 1);
+}
+
+.btn:disabled {
+    opacity: .3;
+    pointer-events: none;
 }
 
 .app-categories span {
@@ -52,7 +73,6 @@ form select {
 
 .gif {
     position: relative;
-    text-align: center;
     cursor: pointer;
 }
 
@@ -61,12 +81,10 @@ form select {
     max-width: 400px;
 }
 
-button.reset {
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-    font-size: 1.5rem;
-    cursor: pointer;
+.gif-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gf-header {
@@ -81,6 +99,10 @@ button.reset {
 .gf-header a:hover {
     color: #fff;
     text-decoration: underline;
+}
+
+.gf-header a+a {
+    margin-left: 10px;
 }
 
 .gif-buttons {
@@ -110,22 +132,89 @@ button.reset {
     width: 20px;
 }
 
+.form {
+    width: 100%;
+    max-width: 320px;
+}
+
+.form label {
+    display: block;
+    font-size: 14px;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 14px;
+    line-height: 2rem;
+    font-size: 16px;
+    padding: 0 8px;
+    background-color: #fff;
+    border: 0;
+}
+
+.form button {
+    width: 100%;
+    padding: .2em 1.5em;
+}
+
+.form-error {
+    display: block;
+    color: red;
+    font-size: 12px;
+    margin-top: -12px;
+    margin-bottom: 14px;
+}
+
+.form input.error {
+    border: 1px solid red;
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+}
+
+.modal-content {
+    background-color: #111;
+    width: 300px;
+    padding: 10px 20px;
+    height: 80vh;
+    margin: 10px auto;
+}
+
+.modal-content .btn {
+    display: block;
+    margin-bottom: 32px;
+}
+
+.page-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-error .code-error {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 5rem;
+}
+
+.page-error .msg-error {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
 @media screen and (max-width: 500px) {
     .gif img {
         width: 100%;
         max-width: 100%;
-    }
-
-    form input {
-        font-size: 1.5rem;
-        border: 0;
-        outline: 0;
-        padding: .5em;
-        border-radius: 4px;
-    }
-
-    form input[type='submit'] {
-        margin-top: 10px;
-        border-radius: 4px;
     }
 }

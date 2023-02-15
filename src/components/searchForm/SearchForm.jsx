@@ -39,7 +39,7 @@ function SearchForm({ initialKeyword = '', initialRating = 'g', initialLang = 'e
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="searchForm" onSubmit={handleSubmit}>
             <input
                 type="text"
                 value={keyword}
@@ -62,9 +62,9 @@ function SearchForm({ initialKeyword = '', initialRating = 'g', initialLang = 'e
                     ))
                 }
             </select>
-            <input type="submit" value="Search" aria-label="search" />
-            <small>{times}</small>
-            <button className="reset" onClick={handleClickReset}>Reset</button>
+            <input className="btn" type="submit" value="Search" aria-label="search" />
+            {/* <small>{times}</small> */}
+            <button className="btn" onClick={handleClickReset}>Reset</button>
         </form>
     )
 }

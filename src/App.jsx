@@ -5,13 +5,14 @@ import { Routes, Route, Link } from 'react-router-dom';
 import SearchResults from './pages/searchResults';
 import Detail from './pages/detail';
 import NotFound from './pages/notFound';
-import Login from './pages/login';
+import LoginPage from './pages/login';
+import RegisterPage from './pages/register';
 
 import { UserContextProvider } from './context/UserContext';
 import { GifsContextProvider } from './context/GifsContext';
 
-import './App.css';
 import Header from './components/Header';
+import './App.css';
 
 const HomePage = lazy(() => import('./pages/home'));
 
@@ -38,7 +39,11 @@ function App() {
                             />
                             <Route
                                 path='/login'
-                                element={<Login />}
+                                element={<LoginPage />}
+                            />
+                            <Route
+                                path='/register'
+                                element={<RegisterPage />}
                             />
                             <Route
                                 path='*'

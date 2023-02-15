@@ -5,14 +5,16 @@ import Fav from './Fav';
 
 function Gifs({ id, title, url }) {
     return (
-        <div className="gif">
-            <div className="gif-buttons">
-                <Fav id={id}/>
+        <div className="gif-detail">
+            <div className="gif">
+                <div className="gif-buttons">
+                    <Fav id={id} />
+                </div>
+                <Link to={`/gif/${id}`}>
+                    {/* <h4>{title}</h4> */}
+                    <img loading="lazy" src={url} alt={title} />
+                </Link>
             </div>
-            <Link to={`/gif/${id}`}>
-                {/* <h4>{title}</h4> */}
-                <img loading="lazy" src={url} alt={title} />
-            </Link>
         </div>
     )
 }
