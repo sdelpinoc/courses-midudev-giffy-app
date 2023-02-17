@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '../Button';
 import { useSearchForm } from './useSearchForm';
 
 const RATINGS = ['g', 'pg', 'pg-13', 'r'];
@@ -62,9 +63,10 @@ function SearchForm({ initialKeyword = '', initialRating = 'g', initialLang = 'e
                     ))
                 }
             </select>
-            <input className="btn" type="submit" value="Search" aria-label="search" />
+            {/* <button type="submit" value="Search" aria-label="search">Search</button> */}
+            <Button>Search</Button>
             {/* <small>{times}</small> */}
-            <button className="btn" onClick={handleClickReset}>Reset</button>
+            {/* <button onClick={handleClickReset}>Reset</button> */}
         </form>
     )
 }

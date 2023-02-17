@@ -1,4 +1,4 @@
-const ENDPOINT = 'http://localhost:3000';
+import { ENDPOINT } from './settings';
 
 export const registerService = ({ email, password }) => {
     return fetch(`${ENDPOINT}/api/users`, {

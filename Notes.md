@@ -23,7 +23,7 @@
     - `yarn add react-hook-form`
 
 - To handle CSS:
-    - `yarn add @emotion/core`
+    - `yarn add @emotion/react @emotion/styled`
 
 - useReducer
 

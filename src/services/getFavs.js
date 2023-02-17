@@ -1,4 +1,4 @@
-const ENDPOINT = 'http://localhost:3000';
+import { ENDPOINT } from './settings';
 
 export const getFavs = ({ jwt }) => {
     return fetch(`${ENDPOINT}/api/favs`, {

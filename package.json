@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "formik": "^2.2.9",
     "intersection-observer": "^0.12.2",
     "just-debounce-it": "^3.2.0",
