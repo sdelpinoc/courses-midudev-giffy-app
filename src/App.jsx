@@ -12,7 +12,6 @@ import { UserContextProvider } from './context/UserContext';
 import { GifsContextProvider } from './context/GifsContext';
 
 import Header from './components/Header';
-import './App.css';
 
 const HomePage = lazy(() => import('./pages/home'));
 
@@ -23,7 +22,7 @@ function App() {
             <Suspense>
                 <section>
                     <GifsContextProvider>
-                        <Link to="/"><h1>Giffy</h1></Link>
+                        <Link to="/"><p className='title'>Giffy</p></Link>
                         <Routes>
                             <Route
                                 path='/'
