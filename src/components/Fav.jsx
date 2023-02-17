@@ -6,7 +6,7 @@ import Modal from './Modal';
 import Login from './Login';
 
 export default function Fav({ id }) {
-    const { isLogged, addFav, favs } = useUser();
+    const { isLogged, addFav, favs, removeFav } = useUser();
 
     // const pushLocation = useNavigate();
 
@@ -16,7 +16,12 @@ export default function Fav({ id }) {
 
     const handleClick = () => {
         if (!isLogged) return setShowModal(true);
-        addFav({ id });
+
+        if (!isFaved) {
+            return addFav({ id });
+        } 
+
+        removeFav({id});
     }
 
     const handleClose = () => {

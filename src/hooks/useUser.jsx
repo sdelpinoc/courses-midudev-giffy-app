@@ -1,8 +1,10 @@
 import { useCallback, useContext, useState } from 'react';
 
 import Context from '../context/UserContext';
+
 import { loginService } from '../services/login';
 import { addFavService } from '../services/addFavService';
+import { removeFavService } from '../services/removeFavService';
 
 export const useUser = () => {
     const { favs, jwt, setJwt, setFavs } = useContext(Context);
@@ -34,13 +36,20 @@ export const useUser = () => {
             .catch(err => console.log(err))
     }, [jwt, setFavs]);
 
+    const removeFav = useCallback(({ id }) => {
+        removeFavService({ id, jwt })
+            .then(setFavs)
+            .catch(err => console.log(err))
+    }, [jwt, setFavs]);
+
     return {
         addFav,
         favs,
+        hasLoginError: state.error,
         isLogged: Boolean(jwt),
         isLoginLoading: state.loading,
-        hasLoginError: state.error,
         login,
-        logout
+        logout,
+        removeFav
     }
 }
