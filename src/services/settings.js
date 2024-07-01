@@ -1,13 +1,13 @@
-let API_KEY = import.meta.env.API_KEY_;
+let API_KEY = import.meta.env.VITE_API_KEY;
 
-let API_URL = import.meta.env.API_URL_;
+let API_URL = import.meta.env.VITE_API_URL;
 
-let ENDPOINT = import.meta.env.ENDPOINT_;
+let ENDPOINT = import.meta.env.VITE_ENDPOINT;
 
 if (import.meta.env.MODE === 'development') {
-  API_KEY = import.meta.env.VITE_API_KEY
-  API_URL = import.meta.env.VITE_API_URL
-  ENDPOINT = import.meta.env.VITE_ENDPOINT
+  API_KEY = import.meta.env.VITE_API_KEY_DEV
+  API_URL = import.meta.env.VITE_API_URL_DEV
+  ENDPOINT = import.meta.env.VITE_ENDPOINT_DEV
 }
 
 export {
