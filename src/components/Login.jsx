@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../hooks/useUser';
 
-export default function Login({ handleLogin }) {
+export default function Login ({ handleLogin }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -11,7 +11,7 @@ export default function Login({ handleLogin }) {
     const { login, isLogged, isLoginLoading, hasLoginError } = useUser();
 
     useEffect(() => {
-        if (isLogged) { 
+        if (isLogged) {
             pushLocation('/');
             handleLogin && handleLogin()
         }
@@ -26,7 +26,7 @@ export default function Login({ handleLogin }) {
     return (
         <>
             {
-                isLoginLoading && <p><strong>Cheking credentials...</strong></p>
+                isLoginLoading && <p><strong>Checking credentials...</strong></p>
             }
             {
                 !isLoginLoading &&

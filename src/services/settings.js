@@ -1,6 +1,13 @@
-export const API_KEY = 'SizX5syPIaUPYNOw3528w38fq2aVJrQE';
 
-export const API_URL = 'https://api.giphy.com/v1';
+// console.log('import.meta.env.MODE: ', import.meta.env.MODE)
+export const API_KEY = import.meta.env.VITE_API_KEY;
 
-// export const ENDPOINT = 'http://localhost:3000';
-export const ENDPOINT = 'https://giffy-app-restserver-production.up.railway.app';
+export const API_URL = import.meta.env.VITE_API_URL;
+
+let ENDPOINT = import.meta.env.ENDPOINT;
+
+if (import.meta.env.MODE === 'development') {
+  ENDPOINT = import.meta.env.VITE_ENDPOINT
+}
+
+export { ENDPOINT }
