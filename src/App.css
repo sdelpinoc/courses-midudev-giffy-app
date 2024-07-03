@@ -1,216 +1,216 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-    font-family: 'Inter, Avenir, Helvetica, Arial, sans-serif';
-    font-size: 16px;
-    font-weight: 400;
+  font-family: 'Inter, Avenir, Helvetica, Arial, sans-serif';
+  font-size: 16px;
+  font-weight: 400;
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 
-    --brand-color-1: #213547;
-    --btn-backgroundcolor: rgba(100, 108, 255, .8);
+  --brand-color-1: #213547;
+  --btn-background-color: rgba(100, 108, 255, .8);
 }
 
 a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
 }
 
 body {
-    max-width: 1440px;
-    margin: 0 auto;
-    min-height: 100vh;
-    background-color: var(--brand-color-1);
-    padding: 1rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--brand-color-1);
+  padding: 1rem;
 }
 
 .title {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .searchForm>* {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .searchForm input,
 .searchForm select,
 .searchForm button {
-    font-size: 1.2rem;
-    border: 0;
-    outline: 0;
-    padding: .5em;
-    border-radius: 4px;
+  font-size: 1.2rem;
+  border: 0;
+  outline: 0;
+  padding: .5em;
+  border-radius: 4px;
 }
 
 .searchForm {
-    display: flex;
-    gap: 10px;
-    justify-content: start;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+  justify-content: start;
+  flex-wrap: wrap;
 }
 
 .btn {
-    font-size: 1.2rem;
-    border: 0;
-    outline: 0;
-    padding: .5em;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    background-color: rgba(100, 108, 255, .8);
+  font-size: 1.2rem;
+  border: 0;
+  outline: 0;
+  padding: .5em;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  background-color: rgba(100, 108, 255, .8);
 }
 
 .btn:hover {
-    background-color: rgba(100, 108, 255, 1);
+  background-color: rgba(100, 108, 255, 1);
 }
 
 .btn:disabled {
-    opacity: .3;
-    pointer-events: none;
+  opacity: .3;
+  pointer-events: none;
 }
 
 .list-of-gifs {
-    display: grid;
-    align-items: stretch;
-    min-height: 100vh;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-template-rows: masonry;
-    gap: 0 16px;
+  display: grid;
+  align-items: stretch;
+  min-height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-rows: masonry;
+  gap: 0 16px;
 }
 
 .gif {
-    position: relative;
-    cursor: pointer;
+  position: relative;
+  cursor: pointer;
 }
 
 .gif img {
-    width: 100%;
-    /* max-width: 400px; */
+  width: 100%;
+  /* max-width: 400px; */
 }
 
 .gif-detail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .gf-header {
-    display: flex;
-    justify-content: end;
+  display: flex;
+  justify-content: end;
 }
 
 .gf-header a {
-    color: #fff;
+  color: #fff;
 }
 
 .gf-header a:hover {
-    color: #fff;
-    text-decoration: underline;
+  color: #fff;
+  text-decoration: underline;
 }
 
 .gf-header a+a {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .gif-buttons {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    line-height: 0;
-    z-index: 1;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  line-height: 0;
+  z-index: 1;
 }
 
 .gf-fav {
-    background-color: rgba(241, 150, 188, .3);
-    border: 0;
-    border-radius: 100px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    transition: all .3s ease;
+  background-color: rgba(241, 150, 188, .3);
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  transition: all .3s ease;
 }
 
 .gf-fav:hover {
-    background-color: rgba(241, 150, 188, .7);
+  background-color: rgba(241, 150, 188, .7);
 }
 
 .gf-fav span {
-    display: block;
-    width: 20px;
+  display: block;
+  width: 20px;
 }
 
 .form {
-    width: 100%;
-    max-width: 320px;
+  width: 100%;
+  max-width: 320px;
 }
 
 .form label {
-    display: block;
-    font-size: 14px;
+  display: block;
+  font-size: 14px;
 }
 
 .form input {
-    display: block;
-    width: 100%;
-    margin-bottom: 16px;
-    margin-top: 14px;
-    line-height: 2rem;
-    font-size: 16px;
-    padding: 0 8px;
-    background-color: #fff;
-    border: 0;
-    color: #000;
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 14px;
+  line-height: 2rem;
+  font-size: 16px;
+  padding: 0 8px;
+  background-color: #fff;
+  border: 0;
+  color: #000;
 }
 
 .form button {
-    width: 100%;
-    padding: .2em 1.5em;
+  width: 100%;
+  padding: .2em 1.5em;
 }
 
 .form-error {
-    display: block;
-    color: red;
-    font-size: 12px;
-    margin-top: -12px;
-    margin-bottom: 14px;
+  display: block;
+  color: red;
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 14px;
 }
 
 .form input.error {
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
 .modal {
-    background-color: rgba(255, 255, 255, .8);
-    backdrop-filter: blur(4px);
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 30;
+  background-color: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
 }
 
 .modal-content {
-    background-color: #111;
-    width: 300px;
-    padding: 10px 20px;
-    height: 80vh;
-    margin: 10px auto;
+  background-color: #111;
+  width: 300px;
+  padding: 10px 20px;
+  height: 80vh;
+  margin: 10px auto;
 }
 
 .modal-content .btn {
-    display: block;
-    margin-bottom: 32px;
+  display: block;
+  margin-bottom: 32px;
 }

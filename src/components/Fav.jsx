@@ -1,53 +1,49 @@
 import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 
 import { useUser } from '../hooks/useUser';
 import Modal from './Modal';
 import Login from './Login';
 
-export default function Fav({ id }) {
-    const { isLogged, addFav, favs, removeFav } = useUser();
+export default function Fav ({ id }) {
+  const { isLogged, addFav, favs, removeFav } = useUser();
 
-    // const pushLocation = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
-    const [showModal, setShowModal] = useState(false);
+  const isFaved = favs.some(favId => favId === id);
 
-    const isFaved = favs.some(favId => favId === id);
+  const handleClick = () => {
+    if (!isLogged) return setShowModal(true);
 
-    const handleClick = () => {
-        if (!isLogged) return setShowModal(true);
-
-        if (!isFaved) {
-            return addFav({ id });
-        } 
-
-        removeFav({id});
+    if (!isFaved) {
+      return addFav({ id });
     }
 
-    const handleClose = () => {
-        setShowModal(false);
-    }
+    removeFav({ id });
+  }
 
-    const [
-        label,
-        emoji
-    ] = isFaved
-            ? [
-                'Remove Gif from favorite',
-                '❌'
-            ] : [
-                'Add Gif to favorite',
-                '❤️'
-            ];
+  const handleClose = () => {
+    setShowModal(false);
+  }
 
-    return (
-        <>
-            <button className="gf-fav" onClick={handleClick}>
-                <span aria-label={label} role="img">{emoji}</span>
-            </button>
-            {
-                showModal && <Modal onClose={handleClose}><Login handleLogin={handleClose} /></Modal>
-            }
-        </>
-    )
+  const [label, emoji] = isFaved
+    ?
+    [
+      'Remove Gif from favorite',
+      '❌'
+    ] :
+    [
+      'Add Gif to favorite',
+      '❤️'
+    ];
+
+  return (
+    <>
+      <button className="gf-fav" onClick={handleClick}>
+        <span aria-label={label} role="img">{emoji}</span>
+      </button>
+      {
+        showModal && <Modal onClose={handleClose}><Login handleLogin={handleClose} /></Modal>
+      }
+    </>
+  )
 }

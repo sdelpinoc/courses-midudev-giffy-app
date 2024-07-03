@@ -4,13 +4,13 @@ import Categories from '../Categories';
 import { getTrendingTerms } from '../../services/getTrendingTerms';
 
 const TrendingSearches = () => {
-    const [trends, setTrends] = useState([]);
+  const [trends, setTrends] = useState([]);
 
-    useEffect(() => {
-        getTrendingTerms().then(setTrends);
-    }, []);
+  useEffect(() => {
+    getTrendingTerms().then(setTrends);
+  }, []);
 
-    return <Categories name={'Trends'} categories={trends} />
+  return <Categories name={'Trends'} categories={trends} />
 }
 
 export default TrendingSearches;

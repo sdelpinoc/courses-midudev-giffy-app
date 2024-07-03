@@ -8,7 +8,7 @@
 
 ## Installations
 
-- To handle routes, redirections, etc.
+- To handle routes, redirects, etc.
 
   - `yarn add react-router-dom`
 
@@ -47,7 +47,8 @@
 - https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=es
 
 - To set the meta tags:
-- `yarn add react-helmet`
+  - `yarn add react-helmet`
+  - `yarn add --dev @types/react-helmet`
 
 ## Info
 
@@ -145,7 +146,9 @@ In jest.setup.js and install 'whatwg-fetch';
 ## Deploy
 
 - Vercel:
-- `npm install --location=global vercel`
-- `vercel`
+
+  - `npm install --location=global vercel`
+  - `vercel`
+
 - For production:
-- `vercel --prod`
+  - `vercel --prod`
