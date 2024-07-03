@@ -5,7 +5,7 @@ function Modal ({ children, onClose }) {
   return (
     <div className="modal">
       <div className="modal-content">
-        <button className="btn" onClick={onClose}>✖️</button>
+        <button className="close-btn" onClick={onClose}>Close</button>
         {children}
       </div>
     </div>
@@ -14,7 +14,7 @@ function Modal ({ children, onClose }) {
 
 export default function modalPortal ({ children, onClose }) {
   return createPortal(
-    <Modal Modal onClose={onClose}>
+    <Modal onClose={onClose}>
       {children}
     </Modal>,
     document.getElementById('modal-root')

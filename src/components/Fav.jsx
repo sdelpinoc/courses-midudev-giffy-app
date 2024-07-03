@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { useUser } from '../hooks/useUser';
+
 import Modal from './Modal';
 import Login from './Login';
 
@@ -42,7 +43,12 @@ export default function Fav ({ id }) {
         <span aria-label={label} role="img">{emoji}</span>
       </button>
       {
-        showModal && <Modal onClose={handleClose}><Login handleLogin={handleClose} /></Modal>
+        showModal &&
+        (
+          <Modal onClose={handleClose}>
+            <Login handleLogin={handleClose} />
+          </Modal>
+        )
       }
     </>
   )

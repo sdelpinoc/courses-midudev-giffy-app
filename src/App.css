@@ -109,7 +109,6 @@ section {
 
 .gif img {
   width: 100%;
-  /* max-width: 400px; */
 }
 
 .gif-detail {
@@ -217,14 +216,25 @@ section {
 }
 
 .modal-content {
-  background-color: #111;
-  width: 300px;
+  position: relative;
+  background-color: #213547;
+  width: 100%;
+  max-width: 320px;
   padding: 10px 20px;
   height: 80vh;
   margin: 10px auto;
+  margin-top: 32px;
+  padding-top: 32px;
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
 }
 
-.modal-content .btn {
-  display: block;
-  margin-bottom: 32px;
+.modal-content .close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
+  border: 0;
+  padding: 8px 10px;
+  border-radius: 4px;
 }

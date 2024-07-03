@@ -40,9 +40,12 @@ export default function Login ({ handleLogin }) {
           onChange={evt => { setPassword(evt.target.value) }}
           placeholder="******"
         />
-        <button className="btn" disabled={isLoginLoading}>{!isLoginLoading ? 'Login' : 'Checking credentials...'}</button>
+        <button type="button"
+          className="btn"
+          disabled={isLoginLoading}>{!isLoginLoading ? 'Login' : 'Checking credentials...'}
+        </button>
       </form>
-      <div>
+      <div style={{ textAlign: 'center' }}>
         Do you need <Link to={'/register'}>register</Link>?
       </div>
       {
