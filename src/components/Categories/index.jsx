@@ -5,8 +5,8 @@ import { CategoryLinks } from './styles';
 const Categories = ({ name, categories }) => {
   return (
     <>
-      <h3>{name}</h3>
-      <div className="list-of-categories">
+      <p className="subtitle">{name}</p>
+      <div>
         {
           categories.map((category, index) => (
             <CategoryLinks key={category} index={index}>

@@ -4,7 +4,7 @@ const ListOfGifs = ({ gifs, keyword }) => {
   return (
     <>
       {
-        (keyword && <h3>{keyword}</h3>)
+        (keyword && <p className="subtitle">{keyword}</p>)
       }
       <div className='list-of-gifs'>
         {

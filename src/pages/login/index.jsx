@@ -8,8 +8,9 @@ export default function LoginPage () {
       <Helmet>
         <title>Login | Giffy</title>
       </Helmet>
-      <h2>Login</h2>
-      <Login />
+      <section>
+        <Login />
+      </section>
     </>
   )
 }

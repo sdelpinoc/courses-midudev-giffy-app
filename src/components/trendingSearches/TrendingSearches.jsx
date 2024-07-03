@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
-import Categories from '../Categories';
 import { getTrendingTerms } from '../../services/getTrendingTerms';
+
+import Categories from '../Categories';
 
 const TrendingSearches = () => {
   const [trends, setTrends] = useState([]);

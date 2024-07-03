@@ -17,7 +17,7 @@ function Home () {
       <SearchForm />
       <div className="app-main">
         <div className="app-results">
-          <h3>Last search</h3>
+          <p className='subtitle'>Last search</p>
           <ListOfGifs gifs={gifs} />
         </div>
         <div className="app-categories">

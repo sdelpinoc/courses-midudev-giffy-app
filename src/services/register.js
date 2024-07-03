@@ -12,11 +12,11 @@ export const registerService = async ({ email, password }) => {
       const result = await res.json();
       const { msg } = result.errors[0];
 
-      throw new Error(msg || 'Response is not ok');
+      throw new Error(msg || 'Could not register account');
     }
 
     return res.json(); // Get the readable stream and this also return a promise, so we need another then
-  }).then(res => {
+  }).then(() => {
     return true;
   });
 }

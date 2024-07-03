@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useUser } from '../hooks/useUser';
 
@@ -25,21 +25,28 @@ export default function Login ({ handleLogin }) {
 
   return (
     <>
+      <form className="form" onSubmit={handleSubmit}>
+        <label htmlFor="email">Email</label>
+        <input
+          type="text"
+          value={email}
+          onChange={evt => { setEmail(evt.target.value) }}
+          placeholder="user@domain.com"
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          value={password}
+          onChange={evt => { setPassword(evt.target.value) }}
+          placeholder="******"
+        />
+        <button className="btn" disabled={isLoginLoading}>{!isLoginLoading ? 'Login' : 'Checking credentials...'}</button>
+      </form>
+      <div>
+        Do you need <Link to={'/register'}>register</Link>?
+      </div>
       {
-        isLoginLoading && <p><strong>Checking credentials...</strong></p>
-      }
-      {
-        !isLoginLoading &&
-        <form className="form" onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
-          <input type="text" value={email} onChange={evt => { setEmail(evt.target.value) }} placeholder="email@email.com" />
-          <label htmlFor="password">Password</label>
-          <input type="password" value={password} onChange={evt => { setPassword(evt.target.value) }} placeholder="password" />
-          <button className="btn" disabled={isLoginLoading}>Login</button>
-        </form>
-      }
-      {
-        hasLoginError && <p><strong>Credentials are invalid</strong></p>
+        hasLoginError && <p>Credentials are invalid! ❌</p>
       }
     </>
   )

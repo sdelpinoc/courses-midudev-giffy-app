@@ -8,7 +8,7 @@ export const loginService = async ({ email, password }) => {
     },
     body: JSON.stringify({ email, password })
   }).then(res => {
-    if (!res.ok) throw new Error('Response is not ok');
+    if (!res.ok) throw new Error('Credentials could not be verified');
     return res.json(); // Get the readable stream and this also return a promise, so we need another then
   }).then(res => {
     const { token } = res;

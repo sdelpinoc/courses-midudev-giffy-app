@@ -20,9 +20,11 @@ function App () {
     <UserContextProvider>
       <Header />
       <Suspense>
-        <section>
+        <main>
           <GifsContextProvider>
-            <Link to="/"><p className='title'>Giffy</p></Link>
+            <Link to="/">
+              <p className="title">Giffy</p>
+            </Link>
             <Routes>
               <Route
                 path='/'
@@ -50,7 +52,7 @@ function App () {
               />
             </Routes>
           </GifsContextProvider>
-        </section>
+        </main>
       </Suspense>
     </UserContextProvider>
   )

@@ -6,12 +6,17 @@ import { loginService } from '../services/login';
 import { addFavService } from '../services/addFavService';
 import { removeFavService } from '../services/removeFavService';
 
+import { sleep } from '../library/utils';
+
 export const useUser = () => {
   const { favs, jwt, setJwt, setFavs } = useContext(Context);
   const [state, setState] = useState({ loading: false, error: false });
 
-  const login = useCallback(({ email, password }) => {
+  const login = useCallback(async ({ email, password }) => {
     setState({ loading: true, error: false });
+
+    await sleep(1)
+
     loginService({ email, password })
       .then(jwt => {
         window.sessionStorage.setItem('jwt', jwt);
@@ -19,9 +24,9 @@ export const useUser = () => {
         setJwt(jwt);
       })
       .catch(err => {
+        console.log(err);
         window.sessionStorage.removeItem('jwt');
         setState({ loading: false, error: true });
-        console.log(err);
       });
   }, [setJwt]);
 

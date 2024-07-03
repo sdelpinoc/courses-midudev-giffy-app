@@ -26,7 +26,7 @@ export default function Header () {
       </>
   }
 
-  const content = (location.pathname === '/login')
+  const content = (['/login', '/register'].includes(location.pathname))
     ? null
     : renderLoginButtons({ isLogged })
 

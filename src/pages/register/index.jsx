@@ -8,8 +8,9 @@ export default function RegisterPage () {
       <Helmet>
         <title>Register | Giffy</title>
       </Helmet>
-      <h2>Register</h2>
-      <Register />
+      <section>
+        <Register />
+      </section>
     </>
   )
 }
