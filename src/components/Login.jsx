@@ -10,6 +10,7 @@ export default function Login ({ handleLogin }) {
   const pushLocation = useNavigate();
 
   const { login, isLogged, isLoginLoading, hasLoginError } = useUser();
+  console.log(login, isLogged, isLoginLoading, hasLoginError)
 
   useEffect(() => {
     if (isLogged) {
@@ -40,7 +41,7 @@ export default function Login ({ handleLogin }) {
           onChange={evt => { setPassword(evt.target.value) }}
           placeholder="******"
         />
-        <button type="button"
+        <button type="submit"
           className="btn"
           disabled={isLoginLoading}>{!isLoginLoading ? 'Login' : 'Checking credentials...'}
         </button>
