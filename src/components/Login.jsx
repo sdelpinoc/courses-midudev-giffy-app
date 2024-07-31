@@ -10,7 +10,6 @@ export default function Login ({ handleLogin }) {
   const pushLocation = useNavigate();
 
   const { login, isLogged, isLoginLoading, hasLoginError } = useUser();
-  console.log(login, isLogged, isLoginLoading, hasLoginError)
 
   useEffect(() => {
     if (isLogged) {
